@@ -611,25 +611,54 @@
     const conditions = ["New", "Refurbished", "Used"];
 
     function generateSampleParts() {
-        const parts = [];
-
-        for (let i = 1; i <= 200; i++) {
-            const category = categories[Math.floor(Math.random() * categories.length)];
-            const condition = conditions[Math.floor(Math.random() * conditions.length)];
-
-            parts.push({
-                id: i,
-                title: `Sample Part ${i}`,
-                description: `This is a sample description for part ${i}. Replace with actual description for this ${category.toLowerCase()} component.`,
-                price: `$${(Math.random() * 500 + 20).toFixed(2)}`,
-                category: category,
-                condition: condition,
-                image: "images/parts/part" + (i % 10) + ".jpg"
-            });
-        }
+        const parts = [
+            // Part ID 1
+            {
+                id: 1,
+                title: "Performance Brake Kit",
+                description: "High-performance brake kit with drilled rotors and ceramic pads. Improves stopping power.",
+                price: "$349.99",
+                category: "Brakes",
+                condition: "New",
+                image: "images/parts/brake-kit.jpg"
+            },
+            // Part ID 2
+            {
+                id: 2,
+                title: "Cold Air Intake System",
+                description: "Increases horsepower with cooler air delivery. Easy installation.",
+                price: "$229.99",
+                category: "Engine",
+                condition: "New",
+                image: "images/parts/air-intake.jpg"
+            },
+            // Part ID 3
+            {
+                id: 3,
+                title: "Sport Suspension Kit",
+                description: "Lowering springs and performance shocks for improved handling.",
+                price: "$599.99",
+                category: "Suspension",
+                condition: "New",
+                image: "images/parts/suspension-kit.jpg"
+            },
+            // Continue adding your parts here with unique IDs...
+            // Make sure each part has a unique ID number
+            {
+                id: 4,
+                title: "Your Part Name",
+                description: "Your part description here",
+                price: "$XXX.XX",
+                category: "Category",
+                condition: "New/Refurbished/Used",
+                image: "images/parts/your-image.jpg"
+            }
+            // Add as many parts as you need up to ID 200
+        ];
 
         return parts;
     }
+
 
     // Inventory data
     const inventoryData = generateSampleParts();
