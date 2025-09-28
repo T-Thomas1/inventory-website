@@ -149,7 +149,7 @@
         .logo-text {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(2c3e50);
+            color: var(#2c3e50);
         }
 
         .logo-text span {
@@ -197,11 +197,11 @@
         .phone {
             margin-right: 20px;
             font-weight: 600;
-            color: var(2c3e50);
+            color: var(#2c3e50);
         }
 
         .phone i {
-            color: var(2c3e50);
+            color: var(#2c3e50);
             margin-right: 5px;
         }
 
@@ -278,10 +278,26 @@
         }
 
         .part-img {
-            height: 200px;
+            height: auto;
             width: 100%;
-            object-fit: cover;
-            border-bottom: 3px solid var(--secondary);
+            overflow: hidden; /* Prevents any overflow */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #eee;
+            background-color: #f0f0f0;
+            color: #999;
+            font-style: italic;
+            position: relative; /* Added for better control */
+            flex-shrink: 0;
+        }
+
+        .part-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* This is the key - makes image fit container */
+            object-position: center;
+            display: block;
         }
 
         .part-info {
@@ -613,7 +629,7 @@
 
 <script>
     // Generate 200 sample parts
-    const categories = ["Engine", "Brakes", "Suspension", "Electrical", "Exhaust", "Transmission", "Cooling", "Fuel System"];
+    const categories = ["Engine", "Brakes", "Suspension", "Electrical", "Exhaust", "Transmission", "Cooling", "Fuel System", "Fender", "Air Conditioning", "Body & Trim", "Interior", "Lighting", "Safety"];
     const conditions = ["Used"];
 
     function generateSampleParts() {
@@ -621,203 +637,201 @@
             // Part ID 1
             {
                 id: 1,
-                title: "Performance Brake Kit",
-                description: "High-performance brake kit with drilled rotors and ceramic pads. Improves stopping power.",
-                price: "$349.99",
-                category: "Brakes",
+                title: "1969 Chevelle Right Fender",
+                description: "This is an original 1969 Chevelle right front fender. It's a used, OEM steel replacement part, showing typical wear but is solid and ready for restoration.",
+                price: "$65.00",
+                category: "Fender",
                 condition: "Used",
-                image: "images/parts/brake-kit.jpg"
+                image: "images/parts/IMG_7870.jpeg"
             },
             // Part ID 2
             {
                 id: 2,
-                title: "Cold Air Intake System",
-                description: "Increases horsepower with cooler air delivery. Easy installation.",
-                price: "$229.99",
-                category: "Engine",
+                title: "1970-1972 A/C Heater Box & Control Unit",
+                description: "This original GM A/C heater box assembly with controller fits 1970-1972 GM A-body cars, including Chevelle, El Camino, and Monte Carlo. A complete unit ideal for a correct restoration.",
+                price: "$350.00",
+                category: "Air Conditioning",
                 condition: "Used",
-                image: "images/parts/air-intake.jpg"
+                image: "images/parts/IMG_7871.jpeg"
             },
             // Part ID 3
             {
                 id: 3,
-                title: "Sport Suspension Kit",
-                description: "Lowering springs and performance shocks for improved handling.",
-                price: "$599.99",
-                category: "Suspension",
+                title: "1969-1972 Chevelle A/C System: Complete Heater Box, Condenser & Blower Motor",
+                description: "This is a complete, original A/C assembly for 1969-1972 Chevelles. The unit includes the main heater box, condenser, and blower motor, ideal for a full factory air conditioning restoration.",
+                price: "$350.00",
+                category: "Air Conditioning",
                 condition: "Used",
-                image: "images/parts/suspension-kit.jpg"
+                image: "images/parts/Image_250928_115524.jpeg"
             },
-            // Continue adding your parts here with unique IDs...
-            // Make sure each part has a unique ID number
             {
                 id: 4,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "1968-89 Chevelle Headlight Harness & Core Support - Needs Repair",
+                description: "Selling a used Chevelle headlight harness and core support for 1968-1989 models. This lot needs work but can be repaired.",
+                price: "$75.00",
+                category: "Electrical",
                 condition: "Used",
-                image: "images/parts/your-image.jpg"
+                image: "images/parts/Image_250928_120748.jpeg"
             },
 
             {
                 id: 5,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2012-2014 Challenger SRT Exhaust Pipes - $100 OBO",
+                description: "Used exhaust pipes off a 2012-2014 Challenger SRT. Sold as-is. Great for a project or as replacements.",
+                price: "$100.00",
+                category: "Exhaust",
                 condition: "Used",
-                image: "images/parts/1.jpg"
+                image: "images/parts/Image_250928_121513.jpeg"
             },
 
             {
                 id: 6,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2015-2021 Chevy Silverado 4.3L LV3 Cylinder Heads w/ Rocker Arms - OBO",
+                description: "Complete set of cylinder heads with rocker arms, removed from a running 4.3L LV3 V6 engine. $1,100 for the set or $600 each. All prices are OBO.",
+                price: "$600",
+                category: "Engine",
                 condition: "Used",
-                image: "images/parts/2.jpg"
+                image: "images/parts/Image_250928_121726.jpeg"
             },
 
             {
                 id: 7,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "1971-1972 Chevelle Rear Bumper",
+                description: "Used original rear bumper for 1971-1972 Chevelle. Shows typical wear but is solid and ready for restoration or as a core.",
+                price: "$150.00",
+                category: "Body & Trim",
                 condition: "Used",
-                image: "images/parts/3.jpg"
+                image: "images/parts/Image_250928_122901.jpeg"
             },
 
             {
                 id: 8,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2015-2020 Dodge Challenger SRT Brake Booster & Master Cylinder Assembly",
+                description: "Used OEM brake booster and master cylinder assembly removed from a 2015-2020 Dodge Challenger SRT. This complete unit is ready for installation.",
+                price: "$300.00",
+                category: "Brakes",
                 condition: "Used",
-                image: "images/parts/4.jpg"
+                image: "images/parts/Image_250928_123131.jpeg"
             },
 
             {
                 id: 9,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "1971-1972 Chevelle Front Bumper - Original GM",
+                description: "This is an original GM front bumper for a 1971-1972 Chevelle. It is a used part showing typical wear but is structurally solid. A great candidate for re-chroming or as a solid driver-quality piece.",
+                price: "$250.00",
+                category: "Body & Trim",
                 condition: "Used",
-                image: "images/parts/5.jpg"
+                image: "images/parts/Image_250928_123907.jpeg"
             },
 
             {
                 id: 10,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "1971-1972 Chevelle Front & Rear Bumper Set - Original GM Pair",
+                description: "Selling a complete set of original GM front and rear bumpers for a 1971-1972 Chevelle. These used bumpers are structurally solid and are ideal for restoration or as driver-quality pieces. Sold as a matching set.",
+                price: "$450.00",
+                category: "Body & Trim",
                 condition: "Used",
-                image: "images/parts/6.jpg"
+                image: "images/parts/Image_250928_124314.jpeg"
             },
 
             {
                 id: 11,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "1968 Chevelle Front Bumper - Has Dings - $150 OBO",
+                description: "This is an original front bumper for a 1968 Chevelle. It has some dings and typical wear, but is solid with no major rust or damage. A great project piece for restoration.",
+                price: "$150.00",
+                category: "Body & Trim",
                 condition: "Used",
-                image: "images/parts/7.jpg"
+                image: "images/parts/Image_250928_124611.jpeg"
             },
 
             {
                 id: 12,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "1972 Chevelle Front Bumper with Brackets Attached - Original GM",
+                description: "This is an original GM front bumper for a 1972 Chevelle, complete with the mounting brackets still attached. This saves you the hassle of sourcing them separately. The bumper shows typical wear but is solid and ready for restoration. A complete, ready-to-install unit.",
+                price: "$125.00",
+                category: "Body & Trim",
                 condition: "Used",
-                image: "images/parts/8.jpg"
+                image: "images/parts/Image_250928_125144.jpeg"
             },
 
             {
                 id: 13,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2012 Corvette C6 ABS Module with Mounting Brackets",
+                description: "Used OEM ABS module with all mounting brackets included. Removed from a 2012 Corvette C6. Part is in working condition.",
+                price: "$250.00",
+                category: "Brakes",
                 condition: "Used",
-                image: "images/parts/9.jpg"
+                image: "images/parts/Image_250928_125440.jpeg"
             },
 
             {
                 id: 14,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2016-2021 Dodge Challenger Dash Pad - Needs Repair",
+                description: "Used OEM dash pad for 2016-2021 Dodge Challenger models. Needs to be repaired. ",
+                price: "$75.00",
+                category: "Interior",
                 condition: "Used",
-                image: "images/parts/10.jpg"
+                image: "images/parts/Image_250928_131042.jpeg"
             },
 
             {
                 id: 15,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "Dodge Challenger Auto-Dimming Rearview Mirror w/ Harness 68088624AA",
+                description: "OEM auto-dimming rearview mirror with wiring harness. Part # 68088624AA. A direct plug-and-play replacement. In good used condition.",
+                price: "$80.00",
+                category: "Interior",
                 condition: "Used",
-                image: "images/parts/11.jpg"
+                image: "images/parts/Image_250928_131659.jpeg"
             },
 
             {
                 id: 16,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "Corvette C6 Radio Bezel - Dash Trim Panel",
+                description: "Used OEM radio bezel (dash trim panel) for a C6 Corvette. This is the surround that houses the radio and climate controls. Shows some light wear but is in good condition with no broken tabs. A direct fit replacement.",
+                price: "$300.00",
+                category: "Interior",
                 condition: "Used",
-                image: "images/parts/12.jpg"
+                image: "images/parts/Image_250928_131945.jpeg"
             },
 
             {
                 id: 17,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2019 Dodge Charger SRT Daytona Rear Tail Light Assembly 68213145AD",
+                description: "OEM passenger-side tail light for a 2019 Dodge Charger SRT Daytona. Part # 68213145AD. This is the right/rear assembly. In excellent used condition, ready to install.",
+                price: "$300.00",
+                category: "Lighting",
                 condition: "Used",
-                image: "images/parts/13.jpg"
+                image: "images/parts/Image_250928_132923.jpeg"
             },
 
             {
                 id: 18,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "Cadillac CTS Lower Right Side Grille Insert - Base Model",
+                description: "This is a used OEM lower right-side grille insert for a base model Cadillac CTS. It is the specific piece for the passenger side of the lower bumper opening. In good condition, ready for installation.",
+                price: "$140.00",
+                category: "Body & Trim",
                 condition: "Used",
-                image: "images/parts/14.jpg"
+                image: "images/parts/Image_250928_133709.jpeg"
             },
 
             {
                 id: 19,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2019-2023 Dodge Charger SRT 392 Brake Pump Module P04779789AG",
+                description: "OEM brake pump module for 2019-2023 Dodge Charger SRT 392 models. Part # P04779789AG. Removed from a working vehicle. A direct plug-and-play replacement for your performance sedan.",
+                price: "$200.00",
+                category: "Brakes",
                 condition: "Used",
-                image: "images/parts/15.jpg"
+                image: "images/parts/Image_250928_134205.jpeg"
             },
 
             {
                 id: 20,
-                title: "Your Part Name",
-                description: "Your part description here",
-                price: "$XXX.XX",
-                category: "Category",
+                title: "2007-2010 Audi Q7 Airbag",
+                description: "Used OEM airbag module for 2007-2010 Audi Q7 models. Sold as-is. Handle with care and consult a professional for installation.",
+                price: "$45.00",
+                category: "Safety",
                 condition: "Used",
-                image: "images/parts/16.jpg"
+                image: "images/parts/Image_250928_135251.jpeg"
             },
 
             {
@@ -996,20 +1010,21 @@
             itemElement.className = 'part-card';
 
             itemElement.innerHTML = `
-            <div class="part-img">
-                <img src="${item.image}" alt="${item.title}" onerror="this.style.display='none'; this.parentNode.innerHTML='Image ${item.id}';">
-            </div>
-            <div class="part-info">
-                <div class="part-category">${item.category} • ${item.condition}</div>
-                <h3 class="part-name">${item.title}</h3>
-                <p class="part-desc">${item.description}</p>
-                <div class="part-price">${item.price}</div>
-                <div class="part-actions">
-                    <a href="#quote" class="btn">Request Quote</a>
-                    <button class="btn btn-outline">Details (Coming Soon)</button>
+                <div class="part-img">
+                    <img src="${item.image}" alt="${item.title}"
+                         onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML='<span>Image ${item.id}</span>';">
                 </div>
-            </div>
-        `;
+                <div class="part-info">
+                    <div class="part-category">${item.category} • ${item.condition}</div>
+                    <h3 class="part-name">${item.title}</h3>
+                    <p class="part-desc">${item.description}</p>
+                    <div class="part-price">${item.price}</div>
+                    <div class="part-actions">
+                        <a href="#quote" class="btn">Request Quote</a>
+                        <button class="btn btn-outline">Details (Coming Soon)</button>
+                    </div>
+                </div>
+            `;
 
             inventoryContainer.appendChild(itemElement);
         });

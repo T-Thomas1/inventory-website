@@ -115,7 +115,7 @@ header {
 .part-card {
     background: white;
     border-radius: 8px;
-    overflow: hidden;
+    overflow: hidden; /* This is already there - good! */
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -126,20 +126,41 @@ header {
 }
 
 .part-img {
-    height: 200px;
+    height: auto;
     width: 100%;
-    object-fit: cover;
-    border-bottom: 1px solid #eee;
-    background-color: #f0f0f0;
+    overflow: hidden; /* Prevents any overflow */
     display: flex;
     align-items: center;
     justify-content: center;
+    border-bottom: 1px solid #eee;
+    background-color: #f0f0f0;
     color: #999;
     font-style: italic;
+    position: relative; /* Added for better control */
+    flex-shrink: 0;
+}
+
+.part-card {
+    /* Ensure the card maintains consistent sizing */
+    min-height: 400px; /* Adjust as needed */
+    display: flex;
+    flex-direction: column;
+}
+
+.part-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* This is the key - makes image fit container */
+    object-position: center;
+    display: block;
 }
 
 .part-info {
     padding: 1.5rem;
+}
+
+.part-info {
+    flex-grow: 1; /* Takes remaining space */
 }
 
 .part-category {
