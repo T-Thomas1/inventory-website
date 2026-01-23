@@ -4,22 +4,22 @@
 
 **Copyright (c) 2025 Superior 7 Products. All Rights Reserved.**
 
-## 🔒 LICENSE NOTICE
+## LICENSE NOTICE
 
 This software and associated documentation files (the "Software") are the proprietary property of Superior 7 Products. The Software is protected by copyright law and international treaty provisions.
 
 **STRICTLY NO PERMISSION IS GRANTED** for any of the following:
 
-- ❌ Reproduction or distribution of the Software
-- ❌ Modification, adaptation, or derivative works
-- ❌ Commercial use by third parties
-- ❌ Public display or performance
-- ❌ Sublicensing, rental, or sale of the Software
-- ❌ Reverse engineering, decompilation, or disassembly
+- Reproduction or distribution of the Software
+- Modification, adaptation, or derivative works
+- Commercial use by third parties
+- Public display or performance
+- Sublicensing, rental, or sale of the Software
+- Reverse engineering, decompilation, or disassembly
 
 Unauthorized use of this Software is strictly prohibited and may result in civil and criminal penalties. This notice must remain intact in all copies or partial copies of the Software.
 
-## 🌐 Business Information
+## Business Information
 
 **Superior 7 Products** is a specialized automotive parts supplier operating as a local business that focuses on:
 
@@ -28,7 +28,7 @@ Unauthorized use of this Software is strictly prohibited and may result in civil
 - **Global network** of suppliers and partners
 - **Fast, reliable, and cost-effective** solutions for automotive parts needs
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 
 ### Built With
 - **HTML5** - Semantic markup and structure
